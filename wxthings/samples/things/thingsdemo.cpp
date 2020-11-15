@@ -335,7 +335,7 @@ wxScrolledWindow *MyFrame::CreateButtonPage(wxWindow *parent)
     bmpcombo = new wxBitmapComboBox(panel, ID++, labels, bitmaps);
     item0->Add( bmpcombo, 0, wxALIGN_CENTRE|wxALL, 5 );
 */
-
+#if WXTHINGS_USE_DropDownPopup
     wxString labels[9] = { wxT("Hello"),
                            wxT("Hello 1"),
                            wxT("H"),
@@ -370,7 +370,7 @@ wxScrolledWindow *MyFrame::CreateButtonPage(wxWindow *parent)
 
     item0->Add( bmpcombo1, 0, wxALIGN_CENTRE|wxALL, 5 );
     item0->Add( bmpcombo2, 0, wxALIGN_CENTRE|wxALL, 5 );
-
+#endif // #if WXTHINGS_USE_DropDownPopup
     panel->SetAutoLayout(true);
     panel->SetSizer(item0);
     return panel;

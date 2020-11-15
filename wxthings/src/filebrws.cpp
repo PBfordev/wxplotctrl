@@ -17,6 +17,8 @@
     #pragma hdrstop
 #endif
 
+#if WXTHINGS_USE_FileBrowser
+
 #ifndef WX_PRECOMP
     #include "wx/wx.h"
 #endif // WX_PRECOMP
@@ -2624,3 +2626,5 @@ wxString wxFileBrowser::GetOpenWithFileCmd(wxFileData* fd) const
     dialog.ShowModal();
     return dialog.GetOpenCommand();
 }
+
+#endif WXTHINGS_USE_FileBrowser

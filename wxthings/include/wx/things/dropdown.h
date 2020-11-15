@@ -37,6 +37,8 @@ DoShowPopup() - this is called from ShowPopup after creating the m_popupWin.
     #pragma interface "dropdown.h"
 #endif
 
+#if WXTHINGS_USE_DropDownPopup
+
 #include "wx/popupwin.h"
 #include "wx/things/thingdef.h"
 
@@ -163,5 +165,7 @@ private:
     DECLARE_DYNAMIC_CLASS(DropDownPopup)
     DECLARE_EVENT_TABLE()
 };
+
+#endif //WXTHINGS_USE_DropDownPopup
 
 #endif  // _WX_DROPDOWNBASE_H_

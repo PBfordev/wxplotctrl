@@ -30,6 +30,8 @@ arrows.
     #pragma interface "bmpcombo.h"
 #endif
 
+#if WXTHINGS_USE_DropDownPopup
+
 #include "wx/things/thingdef.h"
 #include "wx/things/dropdown.h"
 
@@ -219,5 +221,7 @@ public:
 private:
     DECLARE_EVENT_TABLE()
 };
+
+#endif // WXTHINGS_USE_DropDownPopup
 
 #endif  // _WX_BMPCOMBO_H_

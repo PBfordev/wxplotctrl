@@ -14,6 +14,8 @@
     #pragma interface "filebrws.h"
 #endif
 
+#if WXTHINGS_USE_FileBrowser
+
 #include "wx/listctrl.h"
 #include "wx/dirctrl.h"
 #include "wx/filedlg.h"
@@ -354,5 +356,7 @@ private :
     DECLARE_EVENT_TABLE()
     DECLARE_DYNAMIC_CLASS(wxFileBrowser)
 };
+
+#endif // WXTHINGS_USE_FileBrowser
 
 #endif // __WX_FILEBROWSER_H__

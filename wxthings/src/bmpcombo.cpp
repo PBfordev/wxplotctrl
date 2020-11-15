@@ -20,6 +20,8 @@
     #pragma hdrstop
 #endif
 
+#if WXTHINGS_USE_DropDownPopup
+
 #ifndef WX_PRECOMP
     #include "wx/control.h"
     #include "wx/menu.h"
@@ -577,3 +579,5 @@ bool wxBitmapComboBox::SetBackgroundColour(const wxColour &colour)
     }
     return DropDownBase::SetBackgroundColour(colour);
 }
+
+#endif // WXTHINGS_USE_DropDownPopup
