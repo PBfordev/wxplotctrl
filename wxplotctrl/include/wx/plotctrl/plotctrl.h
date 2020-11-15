@@ -963,7 +963,7 @@ protected:
     wxPlotCtrlMarker_Type m_area_mouse_marker;
     int m_area_mouse_cursorid;
 
-    void SetPlotWinMouseCursor(int cursorid);
+    void SetPlotWinMouseCursor(wxStockCursor cursorid);
     int m_mouse_cursorid;
 
 private:
