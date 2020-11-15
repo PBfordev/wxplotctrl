@@ -121,7 +121,7 @@ bool wxOptionValue::Create( const wxString &string )
     UnRef();
     m_refData = new wxOptionValueRefData();
 
-    int i, start = 0, length = string.Length();
+    int start = 0, length = string.Length();
 
     wxString buff;
 
@@ -139,7 +139,7 @@ bool wxOptionValue::Create( const wxString &string )
 
     bool has_type = false;
 
-    for (i=0; i<length; i++, s++)                    // find opening [ for type
+    for (int i=0; i<length; i++, s++)                    // find opening [ for type
     {
         if (*s == openbracket)
         {
@@ -151,7 +151,7 @@ bool wxOptionValue::Create( const wxString &string )
     }
     if (has_type)
     {
-        for (i=start; i<length; i++, s++)            // find closing ] for type
+        for (int i=start; i<length; i++, s++)            // find closing ] for type
         {
             if ((*s == closebracket))
             {
@@ -170,7 +170,7 @@ bool wxOptionValue::Create( const wxString &string )
     }
 
     buff.Clear();
-    for (i=start; i<length; i++)  // add options
+    for (int i=start; i<length; i++)  // add options
     {
         // add up characters until an = sign then the word before is the name
         //   the rest of the string before that is the value for the previous name
@@ -210,14 +210,13 @@ bool wxOptionValue::Create( const wxString &string )
 
     if ((M_OPTVALUDATA->m_optionValues.GetCount() != M_OPTVALUDATA->m_optionNames.GetCount()))
     {
-        int i;
         wxPrintf(wxT("wxOptionValue::wxOptionValue( const wxString &string BUSTED\n"));
 
         wxPrintf(wxT("[%s]\n"), M_OPTVALUDATA->m_type.c_str());
-        for (i=0; i<(int)M_OPTVALUDATA->m_optionNames.GetCount(); i++)
-            wxPrintf(wxT("{%s}\n"), M_OPTVALUDATA->m_optionNames[i].c_str());
-        for (i=0; i<(int)M_OPTVALUDATA->m_optionValues.GetCount(); i++)
-            wxPrintf(wxT("{%s}\n"), M_OPTVALUDATA->m_optionValues[i].c_str());
+        for (int i1=0; i1<(int)M_OPTVALUDATA->m_optionNames.GetCount(); i1++)
+            wxPrintf(wxT("{%s}\n"), M_OPTVALUDATA->m_optionNames[i1].c_str());
+        for (int i1=0; i1<(int)M_OPTVALUDATA->m_optionValues.GetCount(); i1++)
+            wxPrintf(wxT("{%s}\n"), M_OPTVALUDATA->m_optionValues[i1].c_str());
         fflush(stdout);
     }
 
