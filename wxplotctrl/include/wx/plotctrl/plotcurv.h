@@ -43,7 +43,7 @@ extern double LinearInterpolateX( double x0, double y0,
 //----------------------------------------------------------------------------
 
 // defines wxArrayDouble for use as necessary
-WX_DEFINE_USER_EXPORTED_ARRAY_DOUBLE(double, wxArrayDouble, class WXDLLIMPEXP_PLOTCTRL);
+//WX_DEFINE_USER_EXPORTED_ARRAY_DOUBLE(double, wxArrayDouble, class WXDLLIMPEXP_PLOTCTRL);
 
 // wxNullPlotBounds = wxRect2DDouble(0,0,0,0)
 WXDLLIMPEXP_DATA_PLOTCTRL(extern const wxRect2DDouble) wxNullPlotBounds;
