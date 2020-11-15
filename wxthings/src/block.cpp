@@ -20,6 +20,7 @@
 
 #ifndef WX_PRECOMP
     //#include "wx/object.h"
+    #include "wx/wxcrtvararg.h"
 #endif // WX_PRECOMP
 
 #include "wx/things/block.h"

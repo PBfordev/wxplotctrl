@@ -21,6 +21,7 @@
     #include "wx/object.h"
     #include "wx/string.h"
     #include "wx/gdicmn.h"
+    #include "wx/wxcrtvararg.h"
 #endif // WX_PRECOMP
 
 #include "wx/tokenzr.h"
