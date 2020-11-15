@@ -240,7 +240,7 @@ void wxPlotCtrlFrame::OnMenu(wxCommandEvent& event)
                                     wxT(""),
                                     wxT(""),
                                     wxT("All files (*)|*"),
-                                    wxOPEN | wxFILE_MUST_EXIST);
+                                    wxFD_OPEN | wxFD_FILE_MUST_EXIST);
 
             if (fileDialog.ShowModal() == wxID_OK)
             {
