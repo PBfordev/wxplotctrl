@@ -13,6 +13,7 @@
 #define __WX_PLOTDEF_H__
 
 #include "wx/defs.h"
+#include "wx/wxcrtvararg.h"
 #include "wx/geometry.h"
 
 // ----------------------------------------------------------------------------
