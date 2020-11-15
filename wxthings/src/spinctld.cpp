@@ -188,7 +188,7 @@ bool wxSpinCtrlDbl::Create( wxWindow *parent, wxWindowID id,
                       wxTE_NOHIDESEL|wxTE_PROCESS_ENTER, validator);
 
     DoSetSize( pos.x, pos.y, width, height );
-    SetBestSize(wxSize(width, height));
+    SetInitialSize(wxSize(width, height));
 
     m_min = min;
     m_max = max;
@@ -339,14 +339,14 @@ void wxSpinCtrlDbl::OnChar( wxKeyEvent &event )
             DoSendEvent();
             break;
         }
-        case WXK_PRIOR :  // pg-up
+        case WXK_PAGEUP:
         {
             if (m_textCtrl && m_textCtrl->IsModified()) SyncSpinToText(false);
             SetValue( m_value + m_increment * 10.0 * modifier );
             DoSendEvent();
             break;
         }
-        case WXK_NEXT :  // pg-down
+        case WXK_PAGEDOWN:
         {
             if (m_textCtrl && m_textCtrl->IsModified()) SyncSpinToText(false);
             SetValue( m_value - m_increment * 10.0 * modifier );
