@@ -460,7 +460,7 @@ mingw\wxthings_sample_thingsdemo.o: ./../samples/things/thingsdemo.cpp
 	$(CXX) -c -o $@ $(WXTHINGS_SAMPLE_CXXFLAGS) $(CPPDEPS) $<
 
 mingw\wxthings_sample_thingsdemo_rc.o: ./../samples/things/thingsdemo.rc
-	windres --use-temp-file -i$< -o$@ $(__WX_SHAREDDEFINE_p_4) --define HAVE_W32API_H $(__WXUNICODE_DEFINE_p_4) $(__WXDEBUG_DEFINE_p_4) --define __WXMSW__ --include-dir $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) --include-dir $(WX_DIR)/include --include-dir ..\include --include-dir ../samples/things --include-dir ..\samples\things
+	windres -i$< -o$@ $(__WX_SHAREDDEFINE_p_4) --define HAVE_W32API_H $(__WXUNICODE_DEFINE_p_4) $(__WXDEBUG_DEFINE_p_4) --define __WXMSW__ --include-dir $(WX_DIR)$(WXLIBPATH)\msw$(WXLIBPOSTFIX) --include-dir $(WX_DIR)/include --include-dir ..\include --include-dir ../samples/things --include-dir ..\samples\things
 
 .PHONY: all clean install uninstall
 
