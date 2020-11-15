@@ -82,7 +82,7 @@ bool wxCustomButton::Create(wxWindow* parent, wxWindowID id,
 
     wxSize bestSize = DoGetBestSize();
     SetSize(wxSize(size.x<0 ? bestSize.x:size.x, size.y<0 ? bestSize.y:size.y));
-    SetBestSize(GetSize());
+    SetInitialSize(GetSize());
 
     CalcLayout(true);
     return true;
@@ -153,7 +153,7 @@ void wxCustomButton::OnMouseEvents(wxMouseEvent& event)
 
         m_eventType = wxEVT_LEFT_UP;
 
-        if (wxRect(wxPoint(0,0), GetSize()).Inside(event.GetPosition()))
+        if (wxRect(wxPoint(0,0), GetSize()).Contains(event.GetPosition()))
         {
             if ((m_button_style & wxCUSTBUT_BUTTON) && (m_down > 0))
             {
@@ -188,7 +188,7 @@ void wxCustomButton::OnMouseEvents(wxMouseEvent& event)
 
         m_eventType = wxEVT_RIGHT_UP;
 
-        if (wxRect(wxPoint(0,0), GetSize()).Inside(event.GetPosition()))
+        if (wxRect(wxPoint(0,0), GetSize()).Contains(event.GetPosition()))
         {
             if ((m_button_style & wxCUSTBUT_BUTTON) && (m_down > 0))
             {
@@ -372,8 +372,6 @@ void wxCustomButton::Redraw()
 
 void wxCustomButton::Paint( wxDC &dc )
 {
-    dc.BeginDrawing();
-
     int w, h;
     GetSize(&w,&h);
 
@@ -412,7 +410,7 @@ void wxCustomButton::Paint( wxDC &dc )
         foreColour = wxSystemSettings::GetColour(wxSYS_COLOUR_GRAYTEXT);
     }
 
-    wxBrush brush(backColour, wxSOLID);
+    wxBrush brush(backColour, wxBRUSHSTYLE_SOLID);
     dc.SetBackground(brush);
     dc.SetBrush(brush);
     dc.SetPen(*wxTRANSPARENT_PEN);
@@ -452,7 +450,6 @@ void wxCustomButton::Paint( wxDC &dc )
     dc.SetBackground(wxNullBrush);
     dc.SetBrush(wxNullBrush);
     dc.SetPen(wxNullPen);
-    dc.EndDrawing();
 }
 
 void wxCustomButton::OnSize( wxSizeEvent &event )
